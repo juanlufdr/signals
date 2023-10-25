@@ -1,0 +1,50 @@
+<div class="modal-header">
+  <h4 class="modal-title">Edit user</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body" *ngIf="form">
+  <form [formGroup]="form" class="d-flex-column">
+    <div class="form-section">
+      <label for="first_name"> First Name:</label>
+      <input class="form-control" id="first-name" type="text" formControlName="firstName" />
+    </div>
+    <div class="form-section">
+      <label for="first_name">Last Name: </label>
+      <input class="form-control" id="first-name" type="text" formControlName="lastName" />
+    </div>
+
+    <div class="form-section">
+      <label for="first_name">Email: </label>
+      <input class="form-control" id="first-name" type="text" formControlName="email" />
+    </div>
+  </form>
+
+  <div>
+    <pre>
+      {{ userInfo | json}}
+    </pre>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button
+  type="button"
+  class="btn btn-outline-dark"
+  (click)="activeModal.close('Close click')"
+>
+  Cancel
+</button>
+
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="activeModal.close('Close click')"
+  >
+    Confirm
+  </button>
+</div>
